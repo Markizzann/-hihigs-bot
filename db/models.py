@@ -1,4 +1,4 @@
-all = [
+__all__ = [
     "User",
     "Folder",
     "Base",
@@ -17,7 +17,7 @@ class Base(DeclarativeBase):
     pass
 
 class User(Base):
-    tablename = "user_table"
+    __tablename__ = "user_table"
     user_id = Column(Integer, primary_key=True)
     username = Column(VARCHAR(255), unique=False, nullable=False)
     tutorcode = Column(VARCHAR(6), unique=False)
@@ -27,7 +27,7 @@ class User(Base):
 
 
 class Folder(Base):
-    tablename = "folder_table"
+    __tablename__ = "folder_table"
     id = Column(Integer, primary_key=True)
     tutor_id = Column(Integer, ForeignKey("user_table.user_id"), nullable=False)
     path = Column(VARCHAR(255), nullable=False)

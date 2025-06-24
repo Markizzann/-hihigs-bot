@@ -8,4 +8,3 @@ from .logging_config import set_up_logger
 
 # Просто список/кортеж с роутерами
 all_routers = (router_base, router_callbacks)
-

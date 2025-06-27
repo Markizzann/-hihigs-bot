@@ -7,7 +7,6 @@ from config import TOKEN
 from handlers import all_routers, set_my_commands, set_up_logger
 from script.db import async_create_table
 
-
 async def main():
     bot = Bot(token=TOKEN)
     dp = Dispatcher(storage=MemoryStorage())
@@ -21,10 +20,8 @@ async def main():
     logging.info("Script bot starting...")
     await dp.start_polling(bot)
 
-
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
         logging.info("End Script!")
-
